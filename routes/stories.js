@@ -20,4 +20,12 @@ module.exports = function(app){
 	app.get('/traveling', function(req, res, next){
 		res.render('serials', {title: "traveling"})
 	})
+
+	app.get('/about', function(req, res, next){
+		res.render('about', {title:"about"});
+	})
+
+	app.get('/help', function(req, res, next){
+		res.render('help', {title: "help"});
+	})
 }

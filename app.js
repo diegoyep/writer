@@ -4,9 +4,22 @@
  */
 
 var express = require('express');
-
+var secrets = require('./config/secrets');
 var http = require('http');
 var path = require('path');
+var mongoose = require('mongoose');
+
+/**
+* Connect to MongoDB
+**/
+
+
+mongoose.connect(secrets.db);
+mongoose.connection.on('error', function() {
+  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+});
+
+
 
 var app = express();
 
